@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.chiron.fireapp.utils.ToastUtil;
 
 public class MainActivity extends AppCompatActivity {
     private Button mBtnLogin;
@@ -47,11 +48,14 @@ public class MainActivity extends AppCompatActivity {
     private void onClick(View v){
         String userName=mEtUserName.getText().toString();
         String userPass=mEtUserPass.getText().toString();
+        String success="登录成功";
+        String fail="用户名或者密码错误，请重新输入";
         if(userName.equals("jasper") && userPass.equals("123456")){
-            Intent intent=new Intent(MainActivity.this,FuncActivity.class);
+            ToastUtil.showToast(getApplicationContext(),success);
+            Intent intent=new Intent(MainActivity.this, SlideActivity.class);
             startActivity(intent);
         }else{
-            Toast.makeText(MainActivity.this,"账号或密码错误",Toast.LENGTH_LONG);
+            ToastUtil.showToastInCenter(getApplicationContext(),fail);
         }
     }
 }
