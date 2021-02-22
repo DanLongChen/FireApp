@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".StudyActivity">
+    <!--ScrollView竖直滑动，里面只能有一个主要空间，要有多个子控件可以放到LinearLatout里面-->
+    <!--HorizontalScrollView水平滑动-->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/tx"
+                android:textSize="50sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/tx"
+                android:textSize="50sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/tx"
+                android:textSize="50sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/tx"
+                android:textSize="50sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/tx"
+                android:textSize="50sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/tx"
+                android:textSize="50sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--水平单选框-->
+           <RadioGroup
+               android:id="@+id/study_rg"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="20dp">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="今天主要做什么"
+                   android:textSize="20sp"
+                   android:textColor="@color/colorAccent"/>
+
+               <RadioButton
+                   android:id="@+id/study_rb_1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="写代码"
+                   android:textColor="@color/colorBlack"
+                   android:textSize="20sp"
+                   android:checked="true"/>
+               <RadioButton
+                   android:id="@+id/study_rb_2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="看书"
+                   android:textColor="@color/colorBlack"
+                   android:textSize="20sp"
+                   android:checked="false"/>
+               <RadioButton
+                   android:id="@+id/study_rb_3"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="看教学视频"
+                   android:textColor="@color/colorBlack"
+                   android:textSize="20sp"
+                   android:checked="false"/>
+
+           </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="left">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="今天吃了啥"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"/>
+                <CheckBox
+                    android:id="@+id/study_cb_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="大盘鸡"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"/>
+                <CheckBox
+                    android:id="@+id/study_cb_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="火锅"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"/>
+                <CheckBox
+                    android:id="@+id/study_cb_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="口水鸡"
+                    android:textSize="18sp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

@@ -25,7 +25,7 @@
         android:ellipsize="end"
         android:gravity="center_horizontal"
         android:layout_marginTop="360dp"/>
-    <!--hint表示默认显示的文字-->
+    <!--hint表示默认提示的文字，text表示默认输入内容-->
     <!--padding表示里面的文字离ET的距离-->
     <EditText
         android:id="@+id/user_name"
@@ -34,6 +34,7 @@
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
         android:hint="@string/user_name"
+        android:text="jasper"
         android:maxLines="1"
         android:background="@drawable/bg_username"
         android:padding="5dp"
@@ -46,6 +47,7 @@
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
         android:hint="@string/user_pass"
+        android:text="123456"
         android:maxLines="1"
         android:padding="5dp"
         android:inputType="textPassword"
