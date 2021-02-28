@@ -6,25 +6,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@drawable/abc_vector_test"
+    android:background="@color/colorWhite"
     tools:context=".MainActivity">
 
     <!--maxEms表示一行最多字符数，超过这个就会换行-->
     <!--maxLines表示最大行数-->
     <!--ellipsize表示超过最大行数就用省略号表示-->
     <!--gravity表示文字相对于TextView是怎么排放的，还有一个gravity-layout-->
+    <!--AllCaps用于控制是否全部是大写-->
     <TextView
         android:id="@+id/lable_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/main_lable"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorBlack"
         android:textSize="18sp"
-        android:maxEms="4"
+        android:textAllCaps="false"
+        android:maxEms="14"
         android:maxLines="1"
         android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="360dp"/>
+        android:drawableLeft="@drawable/ic_action_android"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"/>
+    <!--使用sp是因为屏幕适配的原因-->
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="用户名"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"/>
     <!--hint表示默认提示的文字，text表示默认输入内容-->
     <!--padding表示里面的文字离ET的距离-->
     <EditText
@@ -36,21 +50,35 @@
         android:hint="@string/user_name"
         android:text="jasper"
         android:maxLines="1"
+        android:drawableLeft="@drawable/ic_action_user"
         android:background="@drawable/bg_username"
-        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_marginTop="20dp"/>
-    <!--inputType为textPassword表示输入会隐藏-->
+    <TextView
+        android:id="@+id/tv_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"/>
+    <!--inputType为textPassword表示输入会隐藏，inputType还可以用于限制输入的类型（如全数字）-->
     <EditText
         android:id="@+id/user_pass"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
+        android:background="@drawable/bg_username"
         android:hint="@string/user_pass"
         android:text="123456"
         android:maxLines="1"
-        android:padding="5dp"
-        android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_action_key"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:inputType="numberPassword"
         android:layout_marginTop="20dp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,6 +95,8 @@
             android:textColor="#201E1E"
             android:background="@drawable/btn_login"
             android:layout_gravity="center"/>
+        <!--也可以直接在xml中写上onclick属性，在点击的时候就回去找到对应的方法
+        其会主动寻找 showToast(View view)-->
         <Button
             android:id="@+id/btn_regist"
             android:layout_width="0dp"
@@ -75,7 +105,88 @@
             android:text="@string/regist"
             android:textColor="#201E1E"
             android:background="@drawable/btn_login"
+            android:onClick="showToast"
             android:layout_marginLeft="4dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            tools:ignore="OnClick" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@color/colorBlack"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btn_login"
+            tools:ignore="NotSibling" />
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@id/view_1"
+            android:layout_alignParentBottom="true"/>
+        <View
+            android:id="@+id/view_3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#F44336"
+            android:layout_toRightOf="@id/view_2"
+            android:layout_alignParentTop="true"/>
+        <View
+            android:id="@+id/view_4"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#E91E63"
+            android:layout_toRightOf="@id/view_3"
+            android:layout_alignParentTop="true"/>
+        <View
+            android:id="@+id/view_5"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#673AB7"
+            android:layout_toRightOf="@id/view_4"
+            android:layout_alignParentBottom="true"/>
+        <View
+            android:id="@+id/view_6"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#3F51B5"
+            android:layout_toRightOf="@id/view_5"
+            android:layout_alignParentBottom="true"/>
+        <View
+            android:id="@+id/view_7"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#03A9F4"
+            android:layout_toRightOf="@id/view_6"
+            android:layout_alignParentBottom="true"/>
+        <View
+            android:id="@+id/view_8"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#FF9800"
+            android:layout_toRightOf="@id/view_7"
+            android:layout_alignParentTop="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <com.chiron.fireapp.view.MyTextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="请登录！请登录！请登录！"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"/>
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

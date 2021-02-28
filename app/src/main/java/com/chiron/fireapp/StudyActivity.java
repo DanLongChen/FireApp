@@ -2,7 +2,10 @@ package com.chiron.fireapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
@@ -15,6 +18,7 @@ public class StudyActivity extends AppCompatActivity {
     private CheckBox mCB1;
     private CheckBox mCB2;
     private CheckBox mCB3;
+    private Button btnTest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,7 @@ public class StudyActivity extends AppCompatActivity {
         mCB1=findViewById(R.id.study_cb_1);
         mCB2=findViewById(R.id.study_cb_2);
         mCB3=findViewById(R.id.study_cb_3);
+        btnTest=findViewById(R.id.btn_test);
         initListener();
     }
 
@@ -43,6 +48,14 @@ public class StudyActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ToastUtil.showToastInCenter(getApplicationContext(),isChecked?buttonView.getText().toString():"未选择");
+            }
+        });
+
+        btnTest.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudyActivity.this,TestActivity.class);
+                startActivity(intent);
             }
         });
     }
