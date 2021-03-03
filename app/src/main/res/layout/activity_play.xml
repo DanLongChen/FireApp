@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlayActivity">
-
+<!--ScrollView中同级的子元素只能有一个-->
     <LinearLayout
         android:id="@+id/play_ll"
         android:layout_width="match_parent"

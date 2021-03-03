@@ -26,6 +26,5 @@ public class PlayActivity extends AppCompatActivity {
                 ToastUtil.showToastInCenter(PlayActivity.this,"click: "+pos);
             }
         }));
-
     }
 }
