@@ -1,11 +1,14 @@
 package com.chiron.fireapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.chiron.fireapp.recyclerview.RecyclerViewActivity;
 
 public class TestActivity extends AppCompatActivity {
     private Button btnRadio;
@@ -13,6 +16,7 @@ public class TestActivity extends AppCompatActivity {
     private Button btnImageView;
     private Button btnListView;
     private Button btnGridView;
+    private Button btnRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,7 @@ public class TestActivity extends AppCompatActivity {
         btnImageView = findViewById(R.id.btn_image_view);
         btnListView = findViewById(R.id.btn_list_view);
         btnGridView = findViewById(R.id.btn_grid_view);
+        btnRecyclerView = findViewById(R.id.btn_recycler_view);
     }
 
     private void setListener(){
@@ -36,6 +41,7 @@ public class TestActivity extends AppCompatActivity {
         btnImageView.setOnClickListener(listener);
         btnListView.setOnClickListener(listener);
         btnGridView.setOnClickListener(listener);
+        btnRecyclerView.setOnClickListener(listener);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -57,6 +63,9 @@ public class TestActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_grid_view:
                     intent = new Intent(TestActivity.this, GridViewActivity.class);
+                    break;
+                case R.id.btn_recycler_view:
+                    intent = new Intent(TestActivity.this, RecyclerViewActivity.class);
                     break;
                 default:
                     intent = new Intent(TestActivity.this, TestActivity.class);
