@@ -32,6 +32,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    //view参数会被自动传入
     @OnClick({R.id.btn_linear,R.id.btn_hor,R.id.btn_pu})
     protected void bind(View view){
         Intent intent = null;
