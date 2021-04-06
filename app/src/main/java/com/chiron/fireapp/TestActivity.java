@@ -17,6 +17,7 @@ public class TestActivity extends AppCompatActivity {
     private Button btnListView;
     private Button btnGridView;
     private Button btnRecyclerView;
+    private Button btnDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class TestActivity extends AppCompatActivity {
         btnListView = findViewById(R.id.btn_list_view);
         btnGridView = findViewById(R.id.btn_grid_view);
         btnRecyclerView = findViewById(R.id.btn_recycler_view);
+        btnDatabase = findViewById(R.id.btn_database_test);
     }
 
     private void setListener(){
@@ -42,6 +44,7 @@ public class TestActivity extends AppCompatActivity {
         btnListView.setOnClickListener(listener);
         btnGridView.setOnClickListener(listener);
         btnRecyclerView.setOnClickListener(listener);
+        btnDatabase.setOnClickListener(listener);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -66,6 +69,9 @@ public class TestActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_recycler_view:
                     intent = new Intent(TestActivity.this, RecyclerViewActivity.class);
+                    break;
+                case R.id.btn_database_test:
+                    intent = new Intent(TestActivity.this, UserActivity.class);
                     break;
                 default:
                     intent = new Intent(TestActivity.this, TestActivity.class);
