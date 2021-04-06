@@ -46,6 +46,7 @@ public class UserActivity extends AppCompatActivity {
         lvUser.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                updateOrDeleteDailog(userList.get(position));
                 return false;
             }
         });
@@ -62,7 +63,7 @@ public class UserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if(which==0){
-                            openAddUserDialog();
+                            openUpdateStudentDialog(user);
                         }else if (which == 1){
                             new DeleteStudentTask(user).execute();
                         }
